@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import HomePage from "./homepage";
 
 export default function Images() {
   console.log("@ images");
