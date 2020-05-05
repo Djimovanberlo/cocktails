@@ -41,11 +41,6 @@ export default function HomePage() {
   return (
     <div>
       <h4>Homepage - view cocktail catgories</h4>
-      <p>
-        <Link to="/images">
-          go to images! (dit worden catagories components)
-        </Link>
-      </p>
       <p>{cocktaiList}</p>
     </div>
   );

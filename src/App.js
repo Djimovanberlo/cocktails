@@ -11,7 +11,6 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/images" component={Images} />
           <Route exact path="/:category" component={Images} />
         </Switch>
       </Router>
