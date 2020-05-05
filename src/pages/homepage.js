@@ -10,19 +10,27 @@ export default function HomePage() {
 
   useEffect(() => {
     async function fetchData() {
-      console.log("test");
-      const data = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink`
+      const response = await axios.get(
+        `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`
       );
-      console.log("data:", data);
-      console.log("data.data", data.data);
-      set_cocktailList(data.data);
+      const drinks = response.data.drinks;
+      console.log("drinks:", drinks);
+
+      function drinksMap() {
+        return (
+          <div>
+            {drinks.map((drink) => {
+              console.log("drink:", drink.strCategory);
+              return <div>{drink.strCategory}</div>;
+            })}
+          </div>
+        );
+      }
+      // drinksMap();
+      set_cocktailList(drinksMap);
     }
     fetchData();
   }, []);
-  // above useEffect: declare & call async function within the useState to prevent trippin'
-  console.log("list: ", cocktaiList);
-  console.log("typeof", typeof cocktaiList);
 
   return (
     <div>
@@ -32,6 +40,7 @@ export default function HomePage() {
           go to images! (dit worden catagories components)
         </Link>
       </p>
+      <p>{cocktaiList}</p>
     </div>
   );
 }
