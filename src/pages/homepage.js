@@ -21,12 +21,15 @@ export default function HomePage() {
           <div>
             {drinks.map((drink) => {
               console.log("drink:", drink.strCategory);
-              return <div>{drink.strCategory}</div>;
+              return (
+                <li>
+                  <Link to={`/${drink.strCategory}`}>{drink.strCategory}</Link>
+                </li>
+              );
             })}
           </div>
         );
       }
-      // drinksMap();
       set_cocktailList(drinksMap);
     }
     fetchData();
