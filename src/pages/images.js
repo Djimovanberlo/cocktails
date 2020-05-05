@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import HomePage from "./homepage";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Images() {

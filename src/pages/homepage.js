@@ -21,9 +21,12 @@ export default function HomePage() {
           <div>
             {drinks.map((drink) => {
               console.log("drink:", drink.strCategory);
+              const linkDrink = String(drink.strCategory);
+              console.log(linkDrink, typeof linkDrink);
+              const linkDrink2 = linkDrink.replace(/\//g, "_");
               return (
                 <li>
-                  <Link to={`/${drink.strCategory}`}>{drink.strCategory}</Link>
+                  <Link to={`/${linkDrink2}`}>{drink.strCategory}</Link>
                 </li>
               );
             })}
